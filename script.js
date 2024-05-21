@@ -1,6 +1,9 @@
-var nome = prompt("Qual o nome Jogador?")
+function mostrarArea() {
+    document.getElementById('Bingo').style.display = 'block'
+}
 
-function mostrarNome(nome) {
+function mostrarNome() {
+    var nome = prompt("Qual o nome Jogador?")
     const nomeCartelaId = document.getElementById('nome-cartela')
     const titulo = document.createElement('h3')
     titulo.textContent = (nome)
@@ -51,7 +54,9 @@ function mostrarCartela(cartelaNumero) {
     cartelaBingoId.appendChild(cartela)
 }
 
-const cartelaNumero = criarCartela();
-
-mostrarCartela(cartelaNumero)
-mostrarNome(nome)
+function mostrarJogo(nome){
+    const cartelaNumero = criarCartela();
+    mostrarCartela(cartelaNumero)
+    mostrarNome()
+    mostrarArea()
+}   
