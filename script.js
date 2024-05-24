@@ -4,7 +4,7 @@ function mostrarArea() {
 
 function mostrarNome() {
     var nome = prompt("Qual o nome Jogador?")
-    const nomeCartelaId = document.getElementById('nome-cartela')
+    const nomeCartelaId = document.getElementById('cartela-bingo')
     const titulo = document.createElement('h3')
     titulo.textContent = (nome)
     nomeCartelaId.appendChild(titulo)
@@ -29,9 +29,18 @@ function criarCartela() {
     return cartelaNumero
 }
 
-function mostrarCartela(cartelaNumero) {
+function mostrarCartela(cartelaNumero, nome) {
     const cartelaBingoId = document.getElementById('cartela-bingo')
+   
+    const divContainer = document.createElement('div');
+    divContainer.classList.add('cartela-container');
+    
+    const titulo = document.createElement('h3');
+    titulo.textContent = nome;
+    divContainer.appendChild(titulo)
+
     const cartela = document.createElement('table')
+
     
     const header = document.createElement('tr')
     const letras = ['B', 'I', 'N', 'G', 'O']
@@ -51,12 +60,13 @@ function mostrarCartela(cartelaNumero) {
         }
         cartela.appendChild(linha)
     }
-    cartelaBingoId.appendChild(cartela)
+    divContainer.appendChild(cartela)
+    cartelaBingoId.appendChild(divContainer)
 }
 
-function mostrarJogo(nome){
+function mostrarJogo(){
     const cartelaNumero = criarCartela();
-    mostrarCartela(cartelaNumero)
     mostrarNome()
+    mostrarCartela(cartelaNumero)
     mostrarArea()
-}   
+}
