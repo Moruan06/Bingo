@@ -5,31 +5,41 @@
 }
 
 body{
-    background-color: rgb(7, 51, 11)
+    background-color: rgb(7, 51, 11);
+    font-family: sans-serif;
 }
 
 h1{
     color: aliceblue;
     text-align: center;
     margin-top: 20px;
-    font-size: 3rem;
+    font-size: clamp(2rem, 8vw, 3.5rem);
 }
 
 .botao{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    margin: 30px 0;
 }
 
 #começarJogo, #reinicarJogo{ 
-    padding: 10px;
+    padding: 10px 20px;
     border-radius: 5px;
     background-color: rgb(5, 179, 34);
     color: aliceblue;
-    font-size: 1rem;
-    margin: 30px 0;
     border: 0;
-    width: 20%;
-    font-size: 1.5rem;
+    width: 100%;
+    max-width: 300px;
+    cursor: pointer;
+    font-size: clamp(1rem, 4vw, 1.5rem); 
+    transition: transform 0.2s;
+}
+
+#começarJogo:hover, #reinicarJogo:hover {
+    transform: scale(1.05);
 }
 
 #reinicarJogo{
@@ -38,24 +48,28 @@ h1{
 
 #Bingo{
     border: 3px solid white;
-    width: 70%;
+    width: 90%;
+    max-width: 800px;
     margin: auto;
     background-color: rgb(1, 20, 2);
     display: none;
     padding: 10px;
+    border-radius: 10px;
 }
 
 #cartela-bingo h3{
-    font-size: 2rem;
     color: rgb(255, 255, 255);
     text-align: center;
+    font-size: clamp(1.5rem, 5vw, 2rem);
 }
 
 #cartela-bingo table{
+    max-width: 200px;
+    width: 100%;
+    aspect-ratio: 1/1.5;
     border: 1px solid;
     border-collapse: collapse;
     text-align: center;
-    font-size: larger;
     background-color: antiquewhite;
     margin: 10px auto;
 }
@@ -64,7 +78,7 @@ h1{
     border: 1px solid;
     border-collapse: collapse;
     padding: 5px;
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 4vw, 1.5rem);
 }
 
 #cartela-bingo td:hover{
@@ -73,5 +87,5 @@ h1{
 
 #cartela-bingo th{
     padding-top: 5px;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 5vw, 2rem);
 }
